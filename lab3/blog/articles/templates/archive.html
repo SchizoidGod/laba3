@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ STATIC_URL }}/static/index.css">
+
+        <title>Архив статей</title>
+        <style>
+            table
+            {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td
+            {
+                border: 1px solid black;
+            }
+            h1
+            {
+                font-family: serif;
+            }
+            h4
+            {
+                font-size: 20x;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <img src="{{ STATIC_URL}}/static/images/logo.jpg" />
+        </div>
+        <div class="archive">
+            {% for post in posts %}
+                <div class="one-post">
+                    <h2 class="post-title">{{ post.title }}</h2>
+                    <div class="article-info">
+                        <div class="article-author">{{ post.author.username }}</div>
+                        <div class="article-created-date">{{ post.created_date }}</div>
+                    </div>
+                    <p class="article-text">{{ post.get_excerpt }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <h1>Привет, Мир!</h1>
+        <h2>Это учебный сайт, с его помощью будут изучены технологии
+            python/django, html/css.</h2>
+        <h3>Как видите, здесь используются заголовки различных уровней.</h3>
+        <h4><p>Здесь есть маркированный список:</p> </h4>
+        <h4>
+            <ul>
+                <li>Элемент 1;</li>
+                 <li>элемент 2;</li>
+                 <li>элемент 3;</li>
+                 <li>последний элемент.</li>
+            </ul>
+        </h4>
+        <h4><p>И нумерованный список:</p></h4>
+        <h4>
+            <ol>
+                 <li>Элемент 1;</li>
+                 <li>элемент 2;</li>
+                 <li>элемент 3;</li>
+                 <li>последний элемент.</li>
+             </ol>
+        </h4>
+        <p>И даже таблица:</p>
+        <table>
+         <thead>
+             <tr>
+                 <th>Столбик 1</th>
+                 <th>Столбик 2</th>
+                 <th>Столбик 3</th>
+                 <th>Столбик 4</th>
+                 <th>Столбик 5</th>
+                 <th>Столбик 6</th>
+             </tr>
+         </thead>
+            <tr>
+                <td>Строка 1 Столбец 1</td>
+                <td>Строка 1 Столбец 2</td>
+                <td>Строка 1 Столбец 3</td>
+                <td>Строка 1 Столбец 4</td>
+                <td>Строка 1 Столбец 5</td>
+                <td>Строка 1 Столбец 6</td>
+            </tr>
+            <tr>
+                <td>Строка 2 Столбец 1</td>
+                <td>Строка 2 Столбец 2</td>
+                <td>Строка 2 Столбец 3</td>
+                <td>Строка 2 Столбец 4</td>
+                <td>Строка 2 Столбец 5</td>
+                <td>Строка 2 Столбец 6</td>
+            </tr>
+            <tr>
+                <td>Строка 3 Столбец 1</td>
+                <td>Строка 3 Столбец 2</td>
+                <td>Строка 3 Столбец 3</td>
+                <td>Строка 3 Столбец 4</td>
+                <td>Строка 3 Столбец 5</td>
+                <td>Строка 3 Столбец 6</td>
+            </tr>
+            <tr>
+                <td>Строка 4 Столбец 1</td>
+                <td>Строка 4 Столбец 2</td>
+                <td>Строка 4 Столбец 3</td>
+                <td>Строка 4 Столбец 4</td>
+                <td>Строка 5 Столбец 5</td>
+                <td>Строка 5 Столбец 6</td>
+            </tr>
+            <tr>
+                <td>Строка 5 Столбец 1</td>
+                <td>Строка 5 Столбец 2</td>
+                <td>Строка 5 Столбец 3</td>
+                <td>Строка 5 Столбец 4</td>
+                <td>Строка 5 Столбец 5</td>
+                <td>Строка 5 Столбец 6</td>
+            </tr>
+             <tr>
+                <td>Строка 6 Столбец 1</td>
+                <td>Строка 6 Столбец 2</td>
+                <td>Строка 6 Столбец 3</td>
+                <td>Строка 6 Столбец 4</td>
+                <td>Строка 6 Столбец 5</td>
+                <td>Строка 6 Столбец 6</td>
+            </tr>
+        </table>
+       <img src="{{ STATIC_URL }}/static/images/pic1.jpg" >
+    </body>
+</html>
